@@ -1,0 +1,30 @@
+<div class="container">
+    <ng-container *ngIf="!listCart">
+        <div class="d-flex justify-content-center">
+            <p>Le panier est vide !</p>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="listCart">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOM</th>
+                    <th>DESCRIPTION</th>
+                    <th>PRIX</th>
+                    <th>QUANTITEE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="number" name="quantity" style="width: 60px"></td>
+                    <td><a class="btn btn-primary">Supprimer</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </ng-container>
+</div>
