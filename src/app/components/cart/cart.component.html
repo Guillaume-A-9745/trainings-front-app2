@@ -21,7 +21,7 @@
                     <td>{{cartItem.training.name}}</td>
                     <td>{{cartItem.training.description}}</td>
                     <td>{{cartItem.training.price}}</td>
-                    <td><input type="number" name="quantity" style="width: 60px">{{cartItem.quantity}}</td>
+                    <td><input type="number" name="quantity" style="width: 60px" [(ngModel)]="cartItem.quantity"></td>
                     <td><a class="btn btn-primary">Supprimer</a></td>
                 </tr>
             </tbody>

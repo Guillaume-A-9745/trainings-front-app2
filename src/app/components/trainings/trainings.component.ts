@@ -12,6 +12,7 @@ export class TrainingsComponent implements OnInit {
   constructor(private cartService : CartService) { }
 
   ngOnInit() : void {
+    this.cartService.loadCart();
     this.listTrainings = [
       { id:1, name:'Java', description:'Formation Java SE 8 sur 5 jours', price:1500, quantity:1 },
       { id:2, name:'Java Avancée', description:'Formation Java Avancée sur 5 jours', price:1500, quantity:1 },

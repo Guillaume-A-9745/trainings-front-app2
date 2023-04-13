@@ -9,17 +9,17 @@ export class CartService {
   private cartItems: { [id: number]: { training: Training, quantity: number } } = {};
 
   constructor() {}
+  
 
   /* Ajoute un article au panier */
   addTraining(training: Training) {
     const id = training.id;
     if (this.cartItems[id]) {
-      this.cartItems[id].quantity += 1;
+      this.cartItems[id].quantity += training.quantity;
     } else {
-      this.cartItems[id] = { training, quantity: 1 };
+      this.cartItems[id] = { training, quantity: training.quantity };
     }
     this.saveCart();
-    console.log(this.cartItems);
   }
 
   /* Récupère tous les articles du panier */
@@ -38,14 +38,14 @@ export class CartService {
     this.saveCart();
   }
 
-  /** Supprime un article du panier */
+  /* Supprime un article du panier */
   removeTraining(training: Training) {
     const id = training.id;
     delete this.cartItems[id];
     this.saveCart();
   }
 
-  /**8 Sauvegarde les articles du panier dans le localStorage*/
+  /* Sauvegarde les articles du panier dans le localStorage*/
   private saveCart() {
     localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
   }
