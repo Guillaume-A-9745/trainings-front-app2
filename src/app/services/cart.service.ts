@@ -19,6 +19,7 @@ export class CartService {
       this.cartItems[id] = { training, quantity: 1 };
     }
     this.saveCart();
+    console.log(this.cartItems);
   }
 
   /* Récupère tous les articles du panier */
