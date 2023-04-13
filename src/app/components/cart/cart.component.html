@@ -1,10 +1,10 @@
 <div class="container">
-    <ng-container *ngIf="!cartItems">
+    <ng-container *ngIf="cartItems.length == 0">
         <div class="d-flex justify-content-center">
             <p>Le panier est vide !</p>
         </div>
     </ng-container>
-    <ng-container *ngIf="cartItems">
+    <ng-container *ngIf="cartItems.length != 0">
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
@@ -21,10 +21,20 @@
                     <td>{{cartItem.training.name}}</td>
                     <td>{{cartItem.training.description}}</td>
                     <td>{{cartItem.training.price}}</td>
-                    <td><input type="number" name="quantity" style="width: 60px" [(ngModel)]="cartItem.quantity"></td>
-                    <td><a class="btn btn-primary">Supprimer</a></td>
+                    <td><input type="number" name="quantity" style="width: 60px" [(ngModel)]="cartItem.quantity" (ngModelChange)="updateQuantity(cartItem.training, $event)"></td>
+                    <td><a (click)="removeTraining(cartItem.training)" class="btn btn-primary">Supprimer</a></td>
                 </tr>
             </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>TOTAL :</td>
+                    <td>{{ totalPrice | currency:'EUR':'symbol':'1.2-2' }}</td>
+                    <td></td>
+                    <td><a (click)="clearCart()" class="btn btn-danger">Supprimer tout le panier </a></td>
+                </tr>
+            </tfoot>
         </table>
     </ng-container>
 </div>

@@ -63,5 +63,14 @@ export class CartService {
     this.cartItems = {};
     this.saveCart();
   }
+
+  /* Mettre à jour le total du panier */
+  updateTotal() {
+    let total : number = 0;
+    for (let id in this.cartItems) {
+      total += this.cartItems[id].training.price * this.cartItems[id].quantity;
+    }
+    return total;
+  }
 }
 
