@@ -76,11 +76,13 @@ export class CartService {
     return total;
   }
 
+  /* Créer un client */
   setCustomer(customer: { name: string, firstName: string, address: string, phone: string, email: string }) {
     this.customer = customer;
     localStorage.setItem('customer', JSON.stringify(customer));
   }
 
+  /* retourner un client */
   getCustomer(): { name: string, firstName: string, address: string, phone: string, email: string } {
     if (!this.customer) {
       const customer = localStorage.getItem('customer');
@@ -89,6 +91,17 @@ export class CartService {
       }
     }
     return this.customer;
+  }
+
+  /* Afficher le nombre darticles dans le panier */ 
+  showNumberCartItems(){
+    let totalQuantity = 0;
+  for (const key in this.cartItems) {
+    if (this.cartItems.hasOwnProperty(key)) {
+      totalQuantity += this.cartItems[key].quantity;
+    }
+  }
+  return totalQuantity;
   }
 }
 

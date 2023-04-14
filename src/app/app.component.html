@@ -3,14 +3,17 @@
   <header class="position-fixed w-100">
     <nav class="navbar navbar-expand-sm bg-light navbar-light ">
       <a href="#" class="navbar-brand">MY TRAININGS SHOP</a>
-      <ul class="navbar-nav">
+      <ul class="navbar-nav w-100 d-flex justify-content-around">
         <li class="nav-item">
           <a class="nav-link" routerLink="/trainings">Listes des formations</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/cart">Contenu du panier</a>
+          <a class="nav-link position-relative" routerLink="/cart">Contenu du panier
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"> {{ cartService.showNumberCartItems() }}
+            </span></a>
         </li>
       </ul>
+      
     </nav>
   </header>
 
@@ -20,7 +23,6 @@
 
     <router-outlet></router-outlet>
 
-    <div style="height: 60px;"></div>
   </main>
 
   <footer class="container-fluid bg-dark text-white px-4">
