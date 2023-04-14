@@ -1,5 +1,8 @@
 <div class="container">
     <ng-container *ngIf="listTrainings">
+        <div class="text-center py-4">
+            <h1>Listes des formations :</h1>
+        </div>
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
@@ -15,7 +18,8 @@
                     <td>{{training.name}}</td>
                     <td>{{training.description}}</td>
                     <td>{{training.price}}</td>
-                    <td><input type="number" name="quantity" min="1" style="width: 60px" [(ngModel)]="training.quantity"></td>
+                    <td><input type="number" name="quantity" min="1" style="width: 60px"
+                            [(ngModel)]="training.quantity"></td>
                     <td><a (click)="onAddToCart(training)" class="btn btn-primary">Ajouter au panier</a></td>
                 </tr>
             </tbody>

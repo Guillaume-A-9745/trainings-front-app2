@@ -1,36 +1,38 @@
 <div class="row justify-content-center m-0">
-    <div class="col-md-6">
-      <form #f="ngForm" (ngSubmit)="onSaveCustomer(f)">
-        <div class="form-group">
-          <label for="" class="control-label">Nom* :</label>
-          <input type="text" class="form-control" name="name" required [(ngModel)]="cartService.customer.name">
-        </div>
-        <div class="form-group">
-          <label for="" class="control-label">Prénom* :</label>
-          <input type="text" class="form-control" name="firstName" required [(ngModel)]="cartService.customer.firstName">
-        </div>
-        <div class="form-group">
-          <label for="" class="control-label">Adresse* :</label>
-          <input type="text" class="form-control" name="address" required [(ngModel)]="cartService.customer.address">
-        </div>
-        <div class="form-group">
-          <label for="" class="control-label">Téléphone* :</label>
-          <input type="text" class="form-control" name="phone" required [(ngModel)]="cartService.customer.phone">
-        </div>
-        <div >
-          <label for="" class="control-label">Email* :</label>
-          <input type="text" class="form-control" name="email" required [(ngModel)]="cartService.customer.email">
-        </div> 
-        <ng-container *ngIf="!f.valid">
-          <div class="form-group text-center m-3">
-            <span>*Tous les champs sont obligatoire.</span>
-          </div>
-        </ng-container>
-        <div class="form-group text-center m-3">
-          <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Suivant -></button>
-        </div>
-       
-      </form>
-    </div>
+  <div class="text-center py-4">
+    <h1>Renseigner vos informations :</h1>
   </div>
-  
+  <div class="col-md-6">
+    <form #f="ngForm" (ngSubmit)="onSaveCustomer(f)">
+      <div class="form-group">
+        <label for="" class="control-label">Nom* :</label>
+        <input type="text" class="form-control" name="name" required [(ngModel)]="cartService.customer.name">
+      </div>
+      <div class="form-group">
+        <label for="" class="control-label">Prénom* :</label>
+        <input type="text" class="form-control" name="firstName" required [(ngModel)]="cartService.customer.firstName">
+      </div>
+      <div class="form-group">
+        <label for="" class="control-label">Adresse* :</label>
+        <input type="text" class="form-control" name="address" required [(ngModel)]="cartService.customer.address">
+      </div>
+      <div class="form-group">
+        <label for="" class="control-label">Téléphone* :</label>
+        <input type="text" class="form-control" name="phone" required [(ngModel)]="cartService.customer.phone">
+      </div>
+      <div>
+        <label for="" class="control-label">Email* :</label>
+        <input type="text" class="form-control" name="email" required [(ngModel)]="cartService.customer.email">
+      </div>
+      <ng-container *ngIf="!f.valid">
+        <div class="form-group text-center m-3">
+          <span>*Tous les champs sont obligatoire.</span>
+        </div>
+      </ng-container>
+      <div class="form-group text-center m-3">
+        <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Suivant -></button>
+      </div>
+
+    </form>
+  </div>
+</div>
