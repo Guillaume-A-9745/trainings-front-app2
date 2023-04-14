@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Training } from '../model/training.model';
+import { Customer } from "../model/customer.model";
 
 @Injectable({
   providedIn: 'root'
@@ -7,8 +8,10 @@ import { Training } from '../model/training.model';
 export class CartService {
 
   private cartItems: { [id: number]: { training: Training, quantity: number } } = {};
-
-  constructor() {}
+  customer: Customer;
+  constructor() {
+    this.customer = new Customer("", "", "", "", "");
+  }
   
 
   /* Ajoute un article au panier */
@@ -71,6 +74,21 @@ export class CartService {
       total += this.cartItems[id].training.price * this.cartItems[id].quantity;
     }
     return total;
+  }
+
+  setCustomer(customer: { name: string, firstName: string, address: string, phone: string, email: string }) {
+    this.customer = customer;
+    localStorage.setItem('customer', JSON.stringify(customer));
+  }
+
+  getCustomer(): { name: string, firstName: string, address: string, phone: string, email: string } {
+    if (!this.customer) {
+      const customer = localStorage.getItem('customer');
+      if (customer) {
+        this.customer = JSON.parse(customer);
+      }
+    }
+    return this.customer;
   }
 }
 
