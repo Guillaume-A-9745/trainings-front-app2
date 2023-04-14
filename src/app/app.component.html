@@ -1,13 +1,41 @@
-<nav class="navbar navbar-expand-sm bg-light navbar-light">
-  <a href="#" class="navbar-brand">TRAININGS</a>
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/trainings">Listes des formations</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/cart">Contenu du panier</a>
-    </li>
-  </ul>
-</nav>
+<div class="row min-vh-100">
 
-<router-outlet></router-outlet>
+  <header class="position-fixed w-100">
+    <nav class="navbar navbar-expand-sm bg-light navbar-light ">
+      <a href="#" class="navbar-brand">MY TRAININGS SHOP</a>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/trainings">Listes des formations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/cart">Contenu du panier</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main style="min-height: calc(100vh - 100px);">
+    <div style="height: 60px;"></div>
+
+    <router-outlet></router-outlet>
+
+    <div style="height: 60px;"></div>
+  </main>
+
+  <footer class="container-fluid bg-dark text-white px-4">
+    <div class="d-flex flex-row justify-content-around m-3">
+      <div class="d-flex w-100 justify-content-lg-around flex-column flex-lg-row">
+        <span>Conditions générales de ventes</span>
+        <span>Mentions légales</span>
+      </div>
+      <div class="d-flex w-100 justify-content-lg-around flex-column flex-lg-row">
+        <span>Données personnelles</span>
+        <span>Cookies</span>
+      </div>
+
+
+    </div>
+  </footer>
+
+</div>

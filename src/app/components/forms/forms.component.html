@@ -22,7 +22,7 @@
       </div>
       <div>
         <label for="" class="control-label">Email* :</label>
-        <input type="text" class="form-control" name="email" required [(ngModel)]="cartService.customer.email">
+        <input type="email" class="form-control" name="email" required [(ngModel)]="cartService.customer.email">
       </div>
       <ng-container *ngIf="!f.valid">
         <div class="form-group text-center m-3">
