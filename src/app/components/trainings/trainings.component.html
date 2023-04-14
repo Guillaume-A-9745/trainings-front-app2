@@ -15,7 +15,7 @@
                     <td>{{training.name}}</td>
                     <td>{{training.description}}</td>
                     <td>{{training.price}}</td>
-                    <td><input type="number" name="quantity" style="width: 60px" [(ngModel)]="training.quantity"></td>
+                    <td><input type="number" name="quantity" min="1" style="width: 60px" [(ngModel)]="training.quantity"></td>
                     <td><a (click)="onAddToCart(training)" class="btn btn-primary">Ajouter</a></td>
                 </tr>
             </tbody>

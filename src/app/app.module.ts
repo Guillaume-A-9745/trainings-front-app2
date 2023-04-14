@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { TrainingsComponent } from './components/trainings/trainings.component';
 import { FormsModule } from '@angular/forms';
 import { CartComponent } from './components/cart/cart.component';
+import { NotFoundComponentComponent } from './components/not-found-component/not-found-component.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TrainingsComponent,
-    CartComponent
+    CartComponent,
+    NotFoundComponentComponent
   ],
   imports: [
     BrowserModule,
